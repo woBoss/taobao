@@ -1,0 +1,124 @@
+*
+	margin 0
+	padding 0
+	line-height 1
+	font-family SimHei
+a
+	text-decoration none
+	color inherit
+ul
+ol
+	list-style none
+em
+i
+	font-style normal
+/*em单位继承自浏览器默认段落字体大小，以这个字体大小作为单位标准，1em=16px*/
+/*如果子集的em在向上查找父级及其以上的单位字体大小时，没有找到，则继承自浏览器默认字体大小*/
+/*如果子集的em在向上查找父级及其以上的单位字体大小时，如果找到，则继承自这一级的单位字体大小*/
+
+/*rem单位继承自浏览器默认段落字体大小，如果在向上查找至html标签，选择最根级的单位字体大小为标准字体大小*/
+/*html标签的font-size为40px，则所有的标签1rem=40px*/
+icon20()
+	display inline-block
+	width unit(20/16, "rem")
+	height @width
+	background-image url(../image/icon20.png)
+	background-size 100% auto
+header
+	padding 0 unit(15/16, "rem")
+	height unit(42/16, "rem")
+	background-color rgb(33, 41, 43)
+	span
+		font-size unit(16/16, "rem")
+		color white
+		line-height @height
+.icon20
+	icon20()
+	&.search
+		float right
+		margin-top unit(11/16, "rem")
+		margin-right @margin-top*3
+		background-position 0 0
+	&.add
+		float right
+		margin-top unit(11/16, "rem")
+		background-position 0 unit(-@width - .5/16, "rem")
+.main
+	height unit(500/16, "rem")
+	background-color rgb(235, 235, 235)
+$w=unit(20.5/16, "rem")
+.row
+	float left
+	width 100%
+	height unit(42/16, "rem")
+	background-color white
+	font-size unit(14/16, "rem")
+	line-height @height
+	&:before
+		icon20()
+		margin 0 unit(15/16, "rem") 0 unit(22/16, "rem")
+		content ""
+		vertical-align middle
+	&.sweep
+		&:before
+			background-position 0 -2*$w
+	&.swag
+		&:before
+			background-position 0 -3*$w
+	&.nearby
+		&:before
+			background-position 0 -4*$w
+	&.bottle
+		&:before
+			background-position 0 -5*$w
+	&.shop
+		&:before
+			background-position 0 -6*$w
+	&.game
+		&:before
+			background-position 0 -7*$w
+	&:nth-of-type(2n-1)
+		position relative
+		margin-top unit(18/16, "rem")
+		&:after
+			position absolute
+			bottom -.5px
+			left unit(10/16, "rem")
+			content ""
+			width unit(300/16, "rem")
+			border-bottom 1px solid rgb(225, 225, 225)
+footer
+	position fixed
+	bottom 0
+	width 100%
+	height unit(48/16, "rem")
+	background-color white
+	border-top 1px solid rgb(225, 225, 225)
+	$w=unit(25.5/16, "rem")
+	div
+		float left
+		width 25%
+		height 100%
+		text-align center
+		font-size unit(12/16, "rem")
+		color rgb(130, 130, 130)
+		&:before
+			margin unit(4/16, "rem") auto unit(2/16, "rem")
+			display block
+			width unit(25/16, "rem")
+			height @width
+			content ""
+			background-image url(../image/icon25.png)
+			background-size 100% auto
+		&.wechat
+			&:before
+				background-position 50% 0
+		&.contact
+			&:before
+				background-position 50% -1*$w
+		&.explore
+			&:before
+				background-position 50% -2*$w
+		&.me
+			&:before
+				background-position 50% -3*$w

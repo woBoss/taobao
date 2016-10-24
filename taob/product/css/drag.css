@@ -1,0 +1,1 @@
+*{margin:0;padding:0;line-height:1;font-family:SimHei}a{text-decoration:none}ul,ol{list-style:none}em,i{font-style:normal}.box,.taskBox,.dustbin{position:relative;margin:2rem auto 0;width:16rem;height:6rem;border:1px solid}.taskBox{background-color:#f00}.dustbin{background-color:#008000}.task{position:absolute;top:0;left:0;width:4rem;height:4rem;background-color:#00f;z-index:1}
